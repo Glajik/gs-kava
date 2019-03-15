@@ -1,0 +1,30 @@
+{
+  "name": "@airbag/kava",
+  "version": "1.0.0",
+  "private": true,
+  "description": "For online testing in Google script projects",
+  "main": "src/kava.js",
+  "scripts": {
+    "test": "mocha -require @babel/register test/*.js",
+    "build": "NODE_ENV=production babel src --out-dir dist"
+  },
+  "author": "Viacheslav Glazhevskyi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "mocha": "^6.0.2",
+    "sinon": "^7.2.7"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "lodash": "^4.17.11"
+  }
+}
