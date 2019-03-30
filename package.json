@@ -1,9 +1,9 @@
 {
-  "name": "@airbag/kava",
+  "name": "@glajik/kava",
   "version": "1.0.0",
   "private": true,
   "description": "For online testing in Google script projects",
-  "main": "dist/kava.js",
+  "main": "src/kava.js",
   "scripts": {
     "lint": "eslint src test --fix",
     "test": "mocha --require @babel/register",
