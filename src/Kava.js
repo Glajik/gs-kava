@@ -2,7 +2,7 @@
  * @class
  * For online testing purpose in Google Apps Script projects
  */
-export default class Kava {
+class Kava {
   constructor(moduleName = '') {
     this._moduleName = moduleName; // eslint-disable-line
     this.results = [];
@@ -10,7 +10,7 @@ export default class Kava {
 
   make(task, fn) {
     try {
-      // invoce funciton
+      // invocation funciton
       fn();
 
       this.results = [
@@ -63,8 +63,8 @@ export default class Kava {
    * @param {Object} received Object, which compared
    * @param {Object} expected Object, used as reference
    */
+  // eslint-disable-next-line class-methods-use-this
   isEqualByKey(received, expected, key) {
-    this.i = 1;
     if (received[key] === expected[key]) {
       return true;
     }
@@ -77,8 +77,8 @@ export default class Kava {
    * @param {*} received value, that compared
    * @param {*} expected sample value
    */
+  // eslint-disable-next-line class-methods-use-this
   isEqual(received, expected) {
-    this.i = 1;
     if (received instanceof Object || expected instanceof Object) {
       throw new Error('Only primitive types can be compared');
     }
@@ -122,3 +122,5 @@ export default class Kava {
     + `* Total: ${total}, errors:${errors}`);
   }
 }
+
+export default Kava;

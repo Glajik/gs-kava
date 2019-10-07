@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import Kava from '../src/kava';
+import Kava from '../src/Kava';
 
 const kava = new Kava();
 
