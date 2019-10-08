@@ -1,6 +1,6 @@
 /**
  * @class
- * For online testing purpose in Google Apps Script projects
+ * For testing purpose in Google Apps Script projects
  */
 class Kava {
   constructor(moduleName = '') {
@@ -44,8 +44,15 @@ class Kava {
 
   /**
    * Check, if all keys and values from sample has comparing object.
+   * Throw exception, if is not equal.
    * @param {Object} reference Key-value object that used for sample for comparing
    * @returns {Function} that take as argument object for comparing
+   * @example
+   * const kava = new Kava('Description');
+   * const assertion = { a: 1, b: 2 };
+   * const compare = kava.compareWith(assertion);
+   * compare({ a: 1, b: 2}); // OK
+   * compate({ a: 1, c: 3 }); // Throw exception
    */
   compareWith(reference) {
     return (source) => {
@@ -74,6 +81,7 @@ class Kava {
 
   /**
    * Compare two primitive type values.
+   * Throw exception, if is not equal.
    * @param {*} received value, that compared
    * @param {*} expected sample value
    */
@@ -98,7 +106,7 @@ class Kava {
   }
 
   /**
-   * Make formatted text output of test results.
+   * Getter make formatted text output of test results.
    * Start it at finish tests
    */
   get output() {
