@@ -8,7 +8,7 @@
     "lint": "eslint src test --fix",
     "test": "mocha --require @babel/register",
     "build": "NODE_ENV=production babel src --out-dir dist",
-    "docs": "jsdoc2md -f src/*.js > api.md"
+    "docs": "jsdoc2md -f src/Kava.js > api.md"
   },
   "author": "Viacheslav Glazhevskyi",
   "license": "ISC",

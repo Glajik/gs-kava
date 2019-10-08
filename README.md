@@ -46,7 +46,7 @@ Simple test:
 <a name="Kava"></a>
 
 ## Kava
-For online testing purpose in Google Apps Script projects
+For testing purpose in Google Apps Script projects
 
 **Kind**: global class  
 
@@ -67,7 +67,7 @@ Return count of errors
 <a name="Kava+output"></a>
 
 ### kava.output
-Make formatted text output of test results.
+Getter make formatted text output of test results.
 Start it at finish tests
 
 **Kind**: instance property of [<code>Kava</code>](#Kava)  
@@ -86,6 +86,7 @@ Set module name that testing
 
 ### kava.compareWith(reference) ⇒ <code>function</code>
 Check, if all keys and values from sample has comparing object.
+Throw exception, if is not equal.
 
 **Kind**: instance method of [<code>Kava</code>](#Kava)  
 **Returns**: <code>function</code> - that take as argument object for comparing  
@@ -94,6 +95,14 @@ Check, if all keys and values from sample has comparing object.
 | --- | --- | --- |
 | reference | <code>Object</code> | Key-value object that used for sample for comparing |
 
+**Example**  
+```js
+const kava = new Kava('Description');
+const assertion = { a: 1, b: 2 };
+const compare = kava.compareWith(assertion);
+compare({ a: 1, b: 2}); // OK
+compate({ a: 1, c: 3 }); // Throw exception
+```
 <a name="Kava+isEqualByKey"></a>
 
 ### kava.isEqualByKey(key, received, expected)
@@ -112,6 +121,7 @@ Throw exception, if is not equal.
 
 ### kava.isEqual(received, expected)
 Compare two primitive type values.
+Throw exception, if is not equal.
 
 **Kind**: instance method of [<code>Kava</code>](#Kava)  
 
